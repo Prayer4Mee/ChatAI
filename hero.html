@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatAI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="chat-app">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <button
+          class="btn btn-outline-light toggle-sidebar-nav"
+          id="toggleSidebar"
+          title="Toggle Sidebar"
+        >
+          ☰
+        </button>
+        <span class="navbar-brand mb-0 h1">ChatAI</span>
+        <div></div>
+      </div>
+    </nav>
+
+    <div class="d-flex main-container">
+      <!-- Left Sidebar -->
+      <aside class="sidebar bg-light">
+        <!-- User Profile -->
+        <div class="sidebar-user-profile p-3 border-bottom">
+          <div class="d-flex align-items-center gap-2">
+            <div
+              class="user-avatar rounded-circle bg-secondary"
+              style="width: 40px; height: 40px"
+            ></div>
+            <div>
+              <small class="d-block fw-bold">ChatAI</small>
+              <small class="text-muted d-block">Navigate Me Now</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat History -->
+        <div class="sidebar-chats flex-grow-1 overflow-y-auto">
+          <div class="p-3">
+            <h6 class="text-muted mb-3">Welcome back Boyfriend!</h6>
+
+            <!-- Chat Item -->
+            <div class="chat-item p-2 mb-2 rounded cursor-pointer">
+              <small>Title of The Chat + Emoji</small>
+            </div>
+            <div class="chat-item p-2 mb-2 rounded cursor-pointer">
+              <small>Title of The Chat + Emoji</small>
+            </div>
+            <div class="chat-item p-2 mb-2 rounded cursor-pointer">
+              <small>Title of The Chat + Emoji</small>
+            </div>
+            <div class="chat-item p-2 mb-2 rounded cursor-pointer">
+              <small>Title of The Chat + Emoji</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Chat Button -->
+        <div class="p-3 border-top">
+          <button class="btn btn-primary w-100">+ New Chat</button>
+        </div>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="chat-area flex-grow-1 d-flex flex-column">
+        <!-- Top Header -->
+        <header
+          class="chat-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex align-items-center gap-2">
+            <div
+              class="user-avatar rounded-circle bg-secondary"
+              style="width: 40px; height: 40px"
+            ></div>
+            <div>
+              <h6 class="mb-0">Name Me D. Luffy</h6>
+              <small class="text-muted">Thursday and Don't Forget!</small>
+            </div>
+          </div>
+          <div class="settings-icon">
+            <span
+              class="bg-secondary rounded p-2"
+              style="display: inline-block; width: 35px; height: 35px"
+            ></span>
+          </div>
+        </header>
+
+        <!-- Pinned Message Bar -->
+        <div class="pinned-bar bg-white border-bottom p-2">
+          <small class="text-muted">
+            <span style="margin-right: 8px">📌</span>Thursday and Don't Forget!
+          </small>
+        </div>
+
+        <!-- Nothing is more important
+         Than the following
+         Because
+         That's where
+          All the messages go
+          Lmao
+        -->
+
+        <!-- Messages Container -->
+        <div class="messages-container flex-grow-1 overflow-y-auto p-4">
+          <!-- Messages will be added here dynamically -->
+        </div>
+
+        <!-- Chat Input -->
+        <footer class="chat-footer bg-white border-top p-3">
+          <div class="input-group">
+            <!-- Expandable Emoji Selector -->
+            <div class="emoji-selector-wrapper">
+              <button
+                class="btn btn-outline-secondary emoji-toggle"
+                type="button"
+                id="emojiToggle"
+                title="Select emoji"
+              >
+                <span class="emoji-display">😊</span>
+              </button>
+              <div class="emoji-dropdown" id="emojiDropdown">
+                <div class="emoji-list">
+                  <span class="emoji-option" data-emoji="😊">😊</span>
+                  <span class="emoji-option" data-emoji="😂">😂</span>
+                  <span class="emoji-option" data-emoji="😘">😘</span>
+                  <span class="emoji-option" data-emoji="🥲">🥲</span>
+                  <span class="emoji-option" data-emoji="😍">😍</span>
+                  <span class="emoji-option" data-emoji="😠">😠</span>
+                  <span class="emoji-option" data-emoji="👿">👿</span>
+                </div>
+              </div>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="PlaceHolder for Chat"
+              aria-label="Message input"
+              id="messageInput"
+            />
+            <button class="btn btn-outline-secondary" type="button">🧷</button>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="sendButton"
+            >
+              💬
+            </button>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="JS/index.js"></script>
+  </body>
+</html>
